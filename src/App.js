@@ -2,13 +2,13 @@ import "./App.css";
 import React, { Component } from 'react'
 import Navbar from "./components/Navbar";
 import News from "./components/News";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 
 export default class App extends Component {
   pageSize=5;
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
       <Navbar />
       <Routes>
       <Route exact path="/" element={<News pageSize={this.pageSize} country='in' category='general' key="home"/>}></Route>
@@ -19,7 +19,7 @@ export default class App extends Component {
         <Route exact path="/general" element={<News pageSize={this.pageSize} country='in' category='general' key="general" />}></Route>
       
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
     )
   }
 }
