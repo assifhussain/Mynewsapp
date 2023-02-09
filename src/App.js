@@ -8,7 +8,7 @@ export default class App extends Component {
   pageSize=5;
   render() {
     return (
-      <HashRouter>
+      <HashRouter basename="/">
       <Navbar />
       <Routes>
       <Route exact path="/" element={<News pageSize={this.pageSize} country='in' category='general' key="home"/>}></Route>
